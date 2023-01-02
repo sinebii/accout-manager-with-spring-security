@@ -82,18 +82,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public User register(String firstName, String lastName, String username, String password, String email) throws UserNotFoundException, UsernameExistException, EmailExistException, MessagingException {
         validateNewUsernameAndEmail(EMPTY, username, email);
 //        String randomCode = RandomStringUtils.randomNumeric(64);
-        User user= User.builder()
-                .userId(generateUserId())
-                .firstName(firstName)
-                .lastName(lastName)
-                .username(username)
-                .email(email)
-                .joinDate(new Date())
-                .password(encodePassword(password))
-
-
-                build();
-        String randomCode = RandomString.make(64);
+        String randomCode = RandomString.make(120);
         User user = new User();
         user.setUserId(generateUserId());
         String genPassword = generatePassword();
