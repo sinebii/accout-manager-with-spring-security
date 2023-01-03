@@ -38,6 +38,4 @@ public class User implements Serializable {
     private String verificationCode;
     private boolean isActive;
     private boolean isNotLocked;
-
-
 }
